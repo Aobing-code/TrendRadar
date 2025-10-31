@@ -2,6 +2,10 @@
 name: Deploy static content to Pages
 
 on:
+  workflow_run:
+    workflows: ["Workflow A"] # 确保这个名字与工作流A的 `name` 完全一致
+    types:
+      - completed
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
